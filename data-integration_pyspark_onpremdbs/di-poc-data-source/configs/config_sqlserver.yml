@@ -1,0 +1,23 @@
+jobs:
+#####    MSSQL_SERVER_POC     ###### 
+
+  - server_name: "mssql_server_01"
+    database: "exchange_db_poc_01"
+    table_name: "settlement"
+    incremental_date: "transaction_date"
+    n: 5
+
+  - server_name: "mssql_server_01"
+    database: "exchange_db_poc_02"
+    table_name: "fosettlement"
+    incremental_date: "transaction_date"
+    n: 5
+
+
+#####    IOB_POC     ###### 
+
+  - server_name: "mssql_server_iob"
+    database: "iob_db_poc"
+    table_name: "ConnectionHistory"
+    incremental_date: "nLogonLogoffTime"
+    n: 5
