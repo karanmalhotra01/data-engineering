@@ -1,0 +1,16 @@
+# PySpark (for Spark jobs)
+pyspark==3.3.2
+
+# AWS SDK (for Secrets Manager, S3, Glue)
+boto3==1.28.57
+
+# YAML parsing (for config files)
+pyyaml==6.0.2
+
+# JDBC Drivers (for MySQL/SQL Server)
+mysql-connector-python==8.0.33  # For MySQL
+pymssql==2.3.4                 # For SQL Server (alternative)
+
+# APis
+requests==2.32.4
+pytz==2025.2
