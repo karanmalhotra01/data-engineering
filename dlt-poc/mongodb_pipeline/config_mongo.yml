@@ -1,0 +1,14 @@
+jobs:
+
+  - collection_name: "employees"
+    load_strategy: "full"
+
+  - collection_name: "order_master"
+    load_strategy: "incr"
+    incremental_field: "date"
+    initial_date: "2026-01-08T00:00:00"
+
+  - collection_name: "fund_nav"
+    load_strategy: "incr"
+    incremental_field: "updated_at"
+    initial_date: "2026-01-08T00:00:00"

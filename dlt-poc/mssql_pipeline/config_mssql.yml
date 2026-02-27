@@ -1,0 +1,44 @@
+jobs:
+  #####   MSSQL_SERVER_POC      ######
+  - server_name: "mssql_server_01"
+    database: "exchange_db_poc_01"
+    table_name: "exchange_db_poc_01"
+    incremental_field: "transaction_date"
+    load_strategy: "incr" 
+    initial_value: "2025-02-15 00:00:00"
+
+
+  - server_name: "mssql_server_01"
+    database: "exchange_db_poc_02"
+    table_name: "fosettlement"
+    incremental_field: "transaction_date"
+    load_strategy: "date_replace" 
+    lookback_days: 2
+    initial_value: "2025-02-15 00:00:00"
+
+
+  - server_name: "mssql_server_01"
+    database: "client_db"
+    table_name: "Client_Details"
+    load_strategy: "full"
+
+
+  - server_name: "mssql_server_01"
+    database: "client_db"
+    table_name: "holding_data"
+    incremental_field: "tradedate"
+    load_strategy: "date_replace"   # All rows share same midnight timestamp → replace by date partition
+    lookback_days: 2                 # How many past days to reload (1 = today only, 2 = today + yesterday)
+    initial_value: "2026-02-17"      # Ignored at runtime, kept for reference
+
+
+
+  #####    IOB_POC   ######
+
+  - server_name: "mssql_server_iob"
+    database: "iob_db_poc"
+    table_name: "ConnectionHistory"
+    incremental_field: "nLogonLogoffTime"
+    load_strategy: "incr"
+    is_unix_timestamp: true
+    initial_value: "2026-02-14 08:58:01"

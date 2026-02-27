@@ -1,0 +1,118 @@
+jobs:
+  #####   COMPANY BACK OFFICE     ######
+  - server_name: "backoffice_server"
+    database: "finance_db"
+    table_name: "fosettlement"
+    incremental_field: "Sauda_date"
+    load_strategy: "incr"
+    initial_value: "2022-02-01"
+    end_date: "2022-02-03"   
+
+
+  - server_name: "backoffice_server"
+    database: "securities_db"
+    table_name: "FoSettlement"
+    incremental_field: "Sauda_Date"
+    load_strategy: "incr"
+    initial_value: "2022-05-05"
+    end_date: "2023-07-28"
+
+  - server_name: "backoffice_server"
+    database: "general_db"
+    table_name: "Settlement"
+    incremental_field: "Sauda_Date"
+    load_strategy: "incr"
+    initial_value: "2022-05-04"
+    end_date: "2026-02-01"
+
+  - server_name: "backoffice_server"
+    database: "derivatives_db"
+    table_name: "FOSETTLEMENT"
+    incremental_field: "SAUDA_DATE"
+    load_strategy: "incr"
+    initial_value: "2023-08-16"
+    end_date: "2026-02-01"
+
+  - server_name: "backoffice_server"
+    database: "commodity_db"
+    table_name: "fosettlement"
+    incremental_field: "Sauda_date"
+    load_strategy: "incr"
+    initial_value: "2022-05-04"
+    end_date: "2026-02-01"
+
+  - server_name: "backoffice_server"
+    database: "client_db"
+    table_name: "settlement"
+    incremental_field: "Sauda_Date"
+    load_strategy: "incr"
+    initial_value: "2023-06-01"
+    end_date: "2026-02-01"
+
+  - server_name: "backoffice_server"
+    database: "exchange_db"
+    table_name: "FoSettlement"
+    incremental_field: "Sauda_Date"
+    load_strategy: "incr"
+    initial_value: "2022-05-04"
+    end_date: "2026-02-01"
+
+
+  - server_name: "backoffice_server"
+    database: "exchange_fo_db"
+    table_name: "FoSettlement"
+    incremental_field: "Sauda_Date"
+    load_strategy: "incr"
+    initial_value: "2022-05-13"
+    end_date: "2026-02-01"
+
+  - server_name: "backoffice_server"
+    database: "client_db"
+    table_name: "Client_Details"
+    load_strategy: "full"
+
+
+  - server_name: "backoffice_server"
+    database: "client_db"
+    table_name: "TBL_HOLDING_DATA"
+    incremental_date: "TRADEDATE"
+    load_strategy: "incr"
+    initial_value: "2022-05-13"
+    end_date: "2026-02-01"
+
+  - server_name: "backoffice_server"
+    database: "trade_db"
+    table_name: "TBL_MTF_DATA"
+    incremental_date: "SAUDA_DATE"
+    load_strategy: "incr"
+    initial_value: "2022-05-13"
+    end_date: "2026-02-01"
+
+
+
+  #####    COMPANY ODIN    ######
+
+  - server_name: "odin_server"
+    database: "master_db"
+    table_name: "tbl_UserConnectionHistory"
+    incremental_field: "nLogonLogoffTime"
+    load_strategy: "incr"
+    is_unix_timestamp: true
+    initial_value: "2024-01-01"
+    end_date: "2026-02-01"
+
+  - server_name: "odin_server"
+    database: "master_db"
+    table_name: "tbl_UniqueDeviceIdentifierData"
+    incremental_field: "dOrderTimestamp"
+    load_strategy: "incr"
+    initial_value: "2025-08-18"
+    end_date: "2026-02-01"
+
+  - server_name: "odin_server"
+    database: "master_db"
+    table_name: "tbl_UniqueDeviceIdentifier"
+    incremental_field: "dLastUpdateTime"
+    load_strategy: "incr"
+    initial_value: "2024-08-17"
+    end_date: "2026-02-01"

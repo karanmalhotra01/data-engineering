@@ -1,0 +1,6 @@
+jobs:
+  - server_name: "subscription_model"
+    database: "subscription_model"
+    table_name: "user_info"
+    schema_name: "poc_schema"
+    load_strategy: "full

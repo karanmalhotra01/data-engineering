@@ -1,0 +1,12 @@
+jobs:
+
+  - collection_name: "order_master"
+    incremental_field: "date"
+    initial_date: "2025-01-01T00:00:00"
+    end_date: "2026-01-09T00:00:00"
+
+  - collection_name: "fund_nav"
+    incremental_field: "updated_at"
+    initial_date: "2025-01-01T00:00:00"
+    end_date: "2026-01-09T00:00:00"
+
